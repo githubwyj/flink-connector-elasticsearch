@@ -29,7 +29,7 @@ under the License.
 
 	<groupId>org.apache.flink</groupId>
 	<artifactId>flink-connector-elasticsearch-parent</artifactId>
-	<version>4.0-SNAPSHOT</version>
+	<version>3.0.2-1.17</version>
 	<name>Flink : Connectors : Elasticsearch : Parent</name>
 	<packaging>pom</packaging>
 	<inceptionYear>2022</inceptionYear>
@@ -44,9 +44,9 @@ under the License.
 
 	<modules>
 		<module>flink-connector-elasticsearch-base</module>
-		<module>flink-connector-elasticsearch6</module>
+<!--		<module>flink-connector-elasticsearch6</module>-->
 		<module>flink-connector-elasticsearch7</module>
-		<module>flink-connector-elasticsearch-e2e-tests</module>
+<!--		<module>flink-connector-elasticsearch-e2e-tests</module>-->
 	</modules>
 
 	<properties>
@@ -373,8 +373,8 @@ under the License.
 				</property>
 			</activation>
 			<modules>
-				<module>flink-sql-connector-elasticsearch6</module>
-				<module>flink-sql-connector-elasticsearch7</module>
+<!--				<module>flink-sql-connector-elasticsearch6</module>-->
+<!--				<module>flink-sql-connector-elasticsearch7</module>-->
 			</modules>
 		</profile>
 	</profiles>
@@ -445,4 +445,19 @@ under the License.
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<!-- 正式版本 -->
+		<repository>
+			<id>tele-releases</id>
+			<name>tele-releases</name>
+			<url>http://192.168.1.175:8081/repository/tele-releases/</url>
+		</repository>
+
+		<!-- 快照版本 -->
+		<snapshotRepository>
+			<id>tele-snapshots</id>
+			<name>tele-snapshots</name>
+			<url>http://192.168.1.175:8081/repository/tele-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
